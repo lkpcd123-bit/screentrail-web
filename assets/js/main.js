@@ -72,6 +72,11 @@ const groupObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-35% 0px -60% 0px' });
 $$('[data-group]').forEach((g) => groupObserver.observe(g));
 tabLinks.forEach((a) => a.addEventListener('click', () => setActiveTab(a.dataset.nav)));
+// #support 같은 섹션 주소로 들어오면, 글꼴·레이아웃이 자리 잡은 뒤 그 위치로 이동한다.
+if (location.hash.length > 1) {
+  const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (target) addEventListener('load', () => target.scrollIntoView({ behavior: 'auto' }), { once: true });
+}
 addEventListener('resize', () => moveIndicator($('[data-nav][aria-current]') || tabLinks[0]));
 document.fonts?.ready.then(() => moveIndicator($('[data-nav][aria-current]') || tabLinks[0]));
 moveIndicator(tabLinks[0]);
