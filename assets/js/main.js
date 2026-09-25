@@ -75,7 +75,13 @@ tabLinks.forEach((a) => a.addEventListener('click', () => setActiveTab(a.dataset
 // #support 같은 섹션 주소로 들어오면, 글꼴·레이아웃이 자리 잡은 뒤 그 위치로 이동한다.
 if (location.hash.length > 1) {
   const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-  if (target) addEventListener('load', () => target.scrollIntoView({ behavior: 'instant' }), { once: true });
+  if (target) {
+    addEventListener('load', () => {
+      target.scrollIntoView({ behavior: 'instant' });
+      const group = target.closest('[data-group]');
+      if (group) setActiveTab(group.dataset.group);
+    }, { once: true });
+  }
 }
 addEventListener('resize', () => moveIndicator($('[data-nav][aria-current]') || tabLinks[0]));
 document.fonts?.ready.then(() => moveIndicator($('[data-nav][aria-current]') || tabLinks[0]));
