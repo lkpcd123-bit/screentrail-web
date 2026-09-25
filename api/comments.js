@@ -68,7 +68,7 @@ export async function GET() {
   try {
     const { items } = await load();
     const comments = items.map(publicView).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-    return json({ comments }, 200, { 'cache-control': 'public, s-maxage=10, stale-while-revalidate=60' });
+    return json({ comments }, 200, { 'cache-control': 'public, s-maxage=5, stale-while-revalidate=10' });
   } catch {
     return json({ error: 'load_failed' }, 500);
   }
