@@ -75,7 +75,7 @@ tabLinks.forEach((a) => a.addEventListener('click', () => setActiveTab(a.dataset
 // #support 같은 섹션 주소로 들어오면, 글꼴·레이아웃이 자리 잡은 뒤 그 위치로 이동한다.
 if (location.hash.length > 1) {
   const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-  if (target) addEventListener('load', () => target.scrollIntoView({ behavior: 'auto' }), { once: true });
+  if (target) addEventListener('load', () => target.scrollIntoView({ behavior: 'instant' }), { once: true });
 }
 addEventListener('resize', () => moveIndicator($('[data-nav][aria-current]') || tabLinks[0]));
 document.fonts?.ready.then(() => moveIndicator($('[data-nav][aria-current]') || tabLinks[0]));
@@ -92,7 +92,7 @@ $$('[data-tabs]').forEach((box) => {
       $(`#${t.getAttribute('aria-controls')}`).hidden = !on;
     });
     if (focus) tab.focus();
-    tab.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    tab.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduceMotion.matches ? 'instant' : 'smooth' });
   };
   tabs.forEach((t, i) => {
     t.addEventListener('click', () => select(t));
@@ -113,7 +113,7 @@ $$('[data-tabs]').forEach((box) => {
 const rail = $('.rail');
 $$('[data-rail]').forEach((btn) => btn.addEventListener('click', () => {
   const step = rail.firstElementChild.getBoundingClientRect().width + 20;
-  rail.scrollBy({ left: btn.dataset.rail === 'next' ? step : -step, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+  rail.scrollBy({ left: btn.dataset.rail === 'next' ? step : -step, behavior: reduceMotion.matches ? 'instant' : 'smooth' });
 }));
 
 /* ---------- 스크롤 등장, 화면 밖 애니메이션 정지 ---------- */
