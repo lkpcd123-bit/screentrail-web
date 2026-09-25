@@ -1,0 +1,5 @@
+node_modules/
+.vercel/
+.env*
+desktop.ini
+.claude/
