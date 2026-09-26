@@ -187,7 +187,8 @@ h2 em { font-style: normal; color: var(--accent-ink); }
 
 /* ---------- hero ---------- */
 .hero { padding: 64px 0 104px; overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); gap: 56px; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; }
+.hero-copy { max-width: 46em; }
 .pill {
   display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px;
   padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink);
@@ -209,7 +210,7 @@ h2 em { font-style: normal; color: var(--accent-ink); }
 
 @media (max-width: 960px) {
   .hero { padding: 40px 0 72px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-grid { gap: 40px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
