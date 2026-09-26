@@ -188,7 +188,7 @@ h2 em { font-style: normal; color: var(--accent-ink); }
 /* ---------- hero ---------- */
 .hero { padding: 64px 0 104px; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; }
-.hero-copy { max-width: 46em; }
+.hero-copy { max-width: 52em; margin: 0 auto; text-align: center; }
 .pill {
   display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px;
   padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink);
@@ -198,8 +198,9 @@ h2 em { font-style: normal; color: var(--accent-ink); }
   font-size: clamp(2.1rem, 1.3rem + 2.5vw, 3.35rem); font-weight: 800; line-height: 1.2; letter-spacing: -.04em; margin-bottom: 22px;
 }
 .hero h1 em { font-style: normal; color: var(--accent); }
-.hero-lead { color: var(--ink-2); font-size: 17px; line-height: 1.75; max-width: 34em; margin-bottom: 32px; }
+.hero-lead { color: var(--ink-2); font-size: 17px; line-height: 1.75; max-width: 34em; margin: 0 auto 32px; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-copy .cta-row { justify-content: center; }
 
 .player {
   position: relative; aspect-ratio: 16 / 9; border-radius: var(--r-lg); overflow: hidden;
