@@ -262,6 +262,16 @@ h2 em { font-style: normal; color: var(--accent-ink); }
 }
 
 /* ---------- 필요한 순간 (기능 탭) ---------- */
+/* 탭마다 색이 다르다. 짙은 글자색과 옅은 배경은 라이트/다크 모두 --ink, --surface와 섞어서 만든다. */
+.fx-tabs { --fa: var(--accent); }
+#fx-tab-1, #fx-1 { --fa: #1f6feb; }
+#fx-tab-2, #fx-2 { --fa: #7c3aed; }
+#fx-tab-3, #fx-3 { --fa: #e5484d; }
+#fx-tab-4, #fx-4 { --fa: #0d9488; }
+.fx-nav button, .fx-panel {
+  --fa-ink: color-mix(in srgb, var(--fa) 72%, var(--ink));
+  --fa-soft: color-mix(in srgb, var(--fa) 13%, var(--surface));
+}
 .fx-nav {
   display: flex; width: max-content; max-width: 100%; margin: 0 auto 32px; padding: 8px; gap: 6px;
   background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
@@ -273,9 +283,9 @@ h2 em { font-style: normal; color: var(--accent-ink); }
   font-size: 15px; font-weight: 700; transition: background-color .25s, color .25s;
 }
 .fx-nav button i { font-size: 26px; transition: transform .3s var(--ease); }
-.fx-nav button:hover { color: var(--accent-ink); }
+.fx-nav button:hover { color: var(--fa-ink); }
 .fx-nav button:hover i { transform: translateY(-2px); }
-.fx-nav button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent-ink); }
+.fx-nav button[aria-selected="true"] { background: var(--fa-soft); color: var(--fa-ink); }
 .fx-panel {
   display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); min-height: 380px; overflow: hidden;
   border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line);
@@ -285,25 +295,25 @@ h2 em { font-style: normal; color: var(--accent-ink); }
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 40px 24px; text-align: center;
   background:
     radial-gradient(circle, hsl(var(--shadow) / .12) 1px, transparent 1.4px) 0 0 / 16px 16px,
-    radial-gradient(120% 90% at 15% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 62%),
-    var(--accent-soft);
+    radial-gradient(120% 90% at 15% 0%, color-mix(in srgb, var(--fa) 24%, transparent), transparent 62%),
+    var(--fa-soft);
 }
 .fx-icon {
   position: relative; width: 76px; height: 76px; display: grid; place-items: center; border-radius: 24px;
-  background: var(--surface); color: var(--accent); font-size: 34px;
-  box-shadow: 0 16px 32px -12px color-mix(in srgb, var(--accent) 60%, transparent);
+  background: var(--surface); color: var(--fa); font-size: 34px;
+  box-shadow: 0 16px 32px -12px color-mix(in srgb, var(--fa) 60%, transparent);
 }
 .fx-icon::before {
-  content: ''; position: absolute; inset: -8px; border-radius: 30px; border: 2px solid var(--accent); opacity: .25;
+  content: ''; position: absolute; inset: -8px; border-radius: 30px; border: 2px solid var(--fa); opacity: .25;
 }
-.fx-vis-label { margin-top: 8px; font-size: 13px; font-weight: 800; color: var(--accent-ink); }
+.fx-vis-label { margin-top: 8px; font-size: 13px; font-weight: 800; color: var(--fa-ink); }
 .fx-chips { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; width: 100%; max-width: 340px; }
 .fx-chips li {
   display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
   background: var(--surface); font-size: 14px; font-weight: 600; color: var(--ink-2); white-space: nowrap;
   box-shadow: 0 6px 16px -10px hsl(var(--shadow) / .4);
 }
-.fx-chips li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 999px; background: var(--accent); }
+.fx-chips li::before { content: ''; flex: none; width: 6px; height: 6px; border-radius: 999px; background: var(--fa); }
 .fx-text { display: flex; flex-direction: column; justify-content: center; padding: 48px 56px; }
 .fx-text h3 { font-size: 28px; font-weight: 800; margin-bottom: 14px; }
 .fx-text p { color: var(--muted); font-size: 17px; line-height: 1.85; max-width: 30em; }
