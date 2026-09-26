@@ -123,35 +123,52 @@
         <h2>필요한 순간, 필요한 도구만</h2>
         <p>자주 쓰는 기능은 메인 화면 첫 줄과 단축키에, 나머지는 한 번의 클릭 거리에 두었습니다.</p>
       </header>
-      <div class="bento">
-        <article class="cell cell-a reveal">
-          <i class="ph ph-camera cell-ic" aria-hidden="true"></i>
-          <h3>화면 캡처</h3>
-          <p>필요한 부분만 잘라 담고, 긴 페이지는 스크롤하며 한 장으로 이어 붙입니다. 찍은 결과는 '최근 샷'에 자동으로 모입니다.</p>
-          <p class="chips-label">지원 모드 및 옵션</p>
-          <ul class="chips"><li>영역 캡처</li><li>스크롤 캡처</li><li>캡처 옵션</li><li>최근 샷 자동 보관</li></ul>
-        </article>
-        <article class="cell cell-b reveal">
-          <i class="ph ph-text-t cell-ic" aria-hidden="true"></i>
-          <h3>텍스트 추출 · 번역</h3>
-          <p>이미지 속 문장을 손으로 옮겨 적을 필요가 없습니다. 영역을 지정하면 글자를 텍스트로 꺼내고, 외국어는 그 자리에서 번역합니다.</p>
-          <p class="chips-label">지원 기능</p>
-          <ul class="chips"><li>텍스트 추출</li><li>번역</li><li>추출 텍스트 복사</li><li>외국어 자료 해석</li></ul>
-        </article>
-        <article class="cell cell-c reveal">
-          <i class="ph ph-video-camera cell-ic" aria-hidden="true"></i>
-          <h3>화면 녹화</h3>
-          <p>말로 설명하기 어려운 과정은 영상으로 남기세요. 녹화한 영상도 '최근 샷'에서 캡처와 함께 관리합니다.</p>
-          <p class="chips-label">지원 기능</p>
-          <ul class="chips"><li>윈도우 녹화</li><li>GIF 제작</li><li>영역 녹화</li><li>영상 품질 녹화</li></ul>
-        </article>
-        <article class="cell cell-d reveal">
-          <i class="ph ph-eyedropper cell-ic" aria-hidden="true"></i>
-          <h3>이미지 도구</h3>
-          <p>화면 속 색상 코드를 바로 뽑고, 이미지 배경을 지워 필요한 대상만 남깁니다. 디자인·콘텐츠 작업의 준비 시간이 줄어듭니다.</p>
-          <p class="chips-label">지원 기능</p>
-          <ul class="chips"><li>컬러 피커</li><li>배경 제거</li><li>이미지 끌어다 놓기</li><li>파일 열기</li></ul>
-        </article>
+      <div class="fx-tabs reveal" data-tabs>
+        <div class="fx-nav" role="tablist" aria-label="기능 분류"><button role="tab" id="fx-tab-1" aria-controls="fx-1" aria-selected="true"><i class="ph ph-camera" aria-hidden="true"></i><span>화면 캡처</span></button><button role="tab" id="fx-tab-2" aria-controls="fx-2" aria-selected="false" tabindex="-1"><i class="ph ph-text-t" aria-hidden="true"></i><span>텍스트·번역</span></button><button role="tab" id="fx-tab-3" aria-controls="fx-3" aria-selected="false" tabindex="-1"><i class="ph ph-video-camera" aria-hidden="true"></i><span>화면 녹화</span></button><button role="tab" id="fx-tab-4" aria-controls="fx-4" aria-selected="false" tabindex="-1"><i class="ph ph-eyedropper" aria-hidden="true"></i><span>이미지 도구</span></button></div>
+        <div class="fx-panel" role="tabpanel" id="fx-1" aria-labelledby="fx-tab-1">
+          <div class="fx-vis">
+            <span class="fx-icon"><i class="ph ph-camera" aria-hidden="true"></i></span>
+            <p class="fx-vis-label">지원 모드 및 옵션</p>
+            <ul class="fx-chips"><li>영역 캡처</li><li>스크롤 캡처</li><li>캡처 옵션</li><li>최근 샷 자동 보관</li></ul>
+          </div>
+          <div class="fx-text">
+            <h3>화면 캡처</h3>
+            <p>필요한 부분만 잘라 담고, 긴 페이지는 스크롤하며 한 장으로 이어 붙입니다. 찍은 결과는 '최근 샷'에 자동으로 모입니다.</p>
+          </div>
+        </div>
+        <div class="fx-panel" role="tabpanel" id="fx-2" aria-labelledby="fx-tab-2" hidden>
+          <div class="fx-vis">
+            <span class="fx-icon"><i class="ph ph-text-t" aria-hidden="true"></i></span>
+            <p class="fx-vis-label">지원 기능</p>
+            <ul class="fx-chips"><li>텍스트 추출</li><li>번역</li><li>추출 텍스트 복사</li><li>외국어 자료 해석</li></ul>
+          </div>
+          <div class="fx-text">
+            <h3>텍스트 추출 · 번역</h3>
+            <p>이미지 속 문장을 손으로 옮겨 적을 필요가 없습니다. 영역을 지정하면 글자를 텍스트로 꺼내고, 외국어는 그 자리에서 번역합니다.</p>
+          </div>
+        </div>
+        <div class="fx-panel" role="tabpanel" id="fx-3" aria-labelledby="fx-tab-3" hidden>
+          <div class="fx-vis">
+            <span class="fx-icon"><i class="ph ph-video-camera" aria-hidden="true"></i></span>
+            <p class="fx-vis-label">지원 기능</p>
+            <ul class="fx-chips"><li>윈도우 녹화</li><li>GIF 제작</li><li>영역 녹화</li><li>영상 품질 녹화</li></ul>
+          </div>
+          <div class="fx-text">
+            <h3>화면 녹화</h3>
+            <p>말로 설명하기 어려운 과정은 영상으로 남기세요. 녹화한 영상도 '최근 샷'에서 캡처와 함께 관리합니다.</p>
+          </div>
+        </div>
+        <div class="fx-panel" role="tabpanel" id="fx-4" aria-labelledby="fx-tab-4" hidden>
+          <div class="fx-vis">
+            <span class="fx-icon"><i class="ph ph-eyedropper" aria-hidden="true"></i></span>
+            <p class="fx-vis-label">지원 기능</p>
+            <ul class="fx-chips"><li>컬러 피커</li><li>배경 제거</li><li>이미지 끌어다 놓기</li><li>파일 열기</li></ul>
+          </div>
+          <div class="fx-text">
+            <h3>이미지 도구</h3>
+            <p>화면 속 색상 코드를 바로 뽑고, 이미지 배경을 지워 필요한 대상만 남깁니다. 디자인·콘텐츠 작업의 준비 시간이 줄어듭니다.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
